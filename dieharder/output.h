@@ -21,7 +21,8 @@
    TSEED = 4096,
    TRATE = 8192,
    TNUM = 16384,
-   TNO_WHITE = 32768
+   TNO_WHITE = 32768,
+   TPVALUELIST = 65536
  } Table;
 
 #define TCNT 16
@@ -49,5 +50,6 @@
  "seed",
  "rate",
  "show_num",
- "no_whitespace"
+ "no_whitespace",
+ "all_pvalues"
  };

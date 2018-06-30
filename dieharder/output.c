@@ -340,7 +340,7 @@ void output_table_line_header()
 void output_table_line(Dtest *dtest,Test **test)
 {
 
- uint i;
+ uint i,j;
  uint field;
 
  /*
@@ -447,6 +447,15 @@ void output_table_line(Dtest *dtest,Test **test)
        fprintf(stdout,"%c",table_separator);
      }
      fprintf(stdout,"%10.8f",test[i]->ks_pvalue);
+     field++;
+   }
+
+   if(tflag & TPVALUELIST){
+     if(field != 0){
+       fprintf(stdout,"%c",table_separator);
+     }
+     for (j=0; j<test[0]->psamples; j++)
+       fprintf(stdout,"%10.8f ",test[i]->pvalues[j]);
      field++;
    }
 
